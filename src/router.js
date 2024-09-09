@@ -1,12 +1,17 @@
 import React from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import LoginPage from "./pages/Login";
-import AboutPage from "./About";
 import RegisterPage from "./pages/Register";
+import AdminPage from "./pages/Admin";
+import PostPage from "./pages/Post";
+import UserPage from "./pages/Users";
+import ProductPage from "./pages/Products";
+import TodoPage from "./pages/Todos";
+
 import ProtectedRouter from "./ProtectedRouter";
 
 const getAccessToken = () => {
-  return false;
+  return true;
 };
 
 const isAuthenticated = () => {
@@ -31,8 +36,30 @@ const router = createBrowserRouter([
     element: <ProtectedRouter isAuthenticated={isAuthenticated()} />,
     children: [
       {
-        path: "/about",
-        element: <AboutPage />,
+        path: "/admin",
+        element: <AdminPage />,
+        children: [
+          {
+            index: true,
+            element: <p>Welcome to the Admin Dashboard! Select an option from the sidebar to get started.</p>,
+          },
+          {
+            path: "posts",
+            element: <PostPage />,
+          },
+          {
+            path: "users",
+            element: <UserPage />,
+          },
+          {
+            path: "products",
+            element: <ProductPage />,
+          },
+          {
+            path: "todos",
+            element: <TodoPage />,
+          },
+        ],
       },
     ],
   },

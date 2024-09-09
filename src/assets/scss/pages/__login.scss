@@ -1,6 +1,6 @@
 .login {
     height: 100vh;
-    // background: url(../../images/theme1.jpg);
+    background: url(../../images/theme1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -26,12 +26,13 @@
     &-btn{
         border: none;
         background: $white-900;
-        border: 1px solid $black-700;
+        border: none;
         padding: 6px ;
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 130%;
         cursor: pointer;
         border-radius: 4px;
+        background: #fff;
     }
 }

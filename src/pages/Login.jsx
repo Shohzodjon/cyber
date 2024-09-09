@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement, incrementByAmount } from '../features/counter/counterSlice';
+// import { increment, decrement, incrementByAmount } from '../features/counter/counterSlice';
 import Input from '../components/BaseInput';
 
 const LoginPage = () => {
 
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
+  // const count = useSelector((state) => state.counter.value);
+  // const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
